@@ -15,7 +15,7 @@
 
 <?php
 //Our select statement. This will retrieve the data that we want.
-$sql = "SELECT name FROM animals";
+$sql = "SELECT * FROM animals";
 
 //Prepare the select statement.
 $stmt = $db->prepare($sql);
@@ -29,16 +29,17 @@ $animals = $stmt->fetchAll();
 
 <!-- HTML form to search for an animal-->
 <form action="query.php" method="post">
-Search by name: <input type="text" name="name"><br> 
-or <br>
 Select an animal:
 <select>
-    <?php foreach($animals as $animal): ?>
-        <option value="<?= $animal['id']; ?>"><?= $animal['name']; ?></option>
-    <?php endforeach; ?>
+    <option value=0>Select</option>
+    <?php foreach($animals as $animal){
+    echo  "<option value= ". $animal['id']. ">". $animal['name']. "</option>";
+    }
+    ?>
 </select> <br>
-
-<input type="submit">
+or <br>
+Search by name: <input type="text" name="name"><br> 
+<input type="submit" value="Search">
 </form>
 
 </body>
