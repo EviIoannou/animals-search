@@ -13,7 +13,7 @@ $animals = $stmt->fetchAll();
 ?>
 
 <!-- HTML form to search for an animal-->
-<form action="query.php" method="post">
+
 Select an animal:
 <select>
     <option value=0>Select</option>

@@ -13,7 +13,13 @@
     <input type="submit" value="Upload Image" name="submit">
 </form>
 
+<!-- Show all data for table 'animals'-->
+<form action="queryAll.php" method="post">
+<input type="submit" value="Show all data">
+</form>
+
 <!-- HTML form to search for an animal-->
+<form action="query.php" method="post">
 <?php include 'select.php'; ?>
 or <br>
 Search by name: <input type="text" name="name"><br> 
