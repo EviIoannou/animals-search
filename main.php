@@ -13,17 +13,34 @@
     <input type="submit" value="Upload Image" name="submit">
 </form>
 
+<?php
+//Our select statement. This will retrieve the data that we want.
+$sql = "SELECT name FROM animals";
+
+//Prepare the select statement.
+$stmt = $db->prepare($sql);
+
+//Execute the statement.
+$stmt->execute();
+
+//Retrieve the rows using fetchAll.
+$animals = $stmt->fetchAll();
+?>
+
 <!-- HTML form to search for an animal-->
 <form action="query.php" method="post">
-Select an animal: <input type="text" name="name"><br> 
+Search by name: <input type="text" name="name"><br> 
 or <br>
-Search by name: <select name="name"><br>
+Select an animal:
+<select>
+    <?php foreach($animals as $animal): ?>
+        <option value="<?= $animal['id']; ?>"><?= $animal['name']; ?></option>
+    <?php endforeach; ?>
+</select> <br>
+
 <input type="submit">
 </form>
 
 </body>
 </html>
-
-
-<?php include "query.php" ?>
  
