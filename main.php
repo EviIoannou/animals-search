@@ -21,8 +21,17 @@
 <!-- HTML form to search for an animal-->
 <form action="query.php" method="post">
 <?php include 'select.php'; ?>
+Select an animal:
+<select name='animalName'>
+    <option value = '0' >Select</option>
+    <?php foreach($animals as $animal){
+    echo  "<option value= ". $animal['name']. " >". $animal['name']. "</option>";
+    }
+    ?>
+</select> <br>
 or <br>
 Search by name: <input type="text" name="name"><br> 
+
 <input type="submit" value="Search">
 </form>
 
