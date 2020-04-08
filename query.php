@@ -1,22 +1,40 @@
 <?php
-//database open; an example query
-$query = "select * from animals";
-echo "Running the query: ". $query . "<br>"; 
-try {
+
+function getResults($query){
+    require 'connection.php';
+    echo "Running the query: ". $query . "<br>"; 
     $sth = $db -> query($query);
     $animalcount = $sth->rowCount();
     if ($animalcount==0){ //check if there is data
-        echo "Sorry, there is no data about these animals.";
+        echo "Sorry, there is no data about this animal.";
     exit;
     }
     else {
         echo '<table bgcolor"#bdc0ff" cellpadding="6"' ;
         echo '<tr> <b> <td>Name</td> <td>Category</td> <td>Birthday</td> </b> </tr>';
         while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-            printf("<tr><td> %s</td> <td>%s </td> <td>%s </td> </tr>", $row["name"], $row["category"], $row["birthday"]);
+            printf("<tr><td> %s</td> <td>%s </td> <td>%s </td> </tr>", 
+            $row["name"], $row["category"], $row["birthday"]);
         }
     }
 }
-catch (PDOException $e){
-    echo "There is an error: \n", $e->getMessage() ;
+
+$animalOption = $_POST['animalName'];
+$animalText = $_POST['name'];
+if (isset($animalOption)){
+     if ($animalOption!= '0' && empty($animalText)) {
+        $query = "select * from animals where name like '%". $animalOption. "%'";
+        getResults($query);   
+        }
+
+    else if ($animalOption=== '0' && !empty($animalText)) {
+        $query = "select * from animals where name like '%". $animalText. "%'";
+        getResults($query);
+        }
 }
+   
+
+
+
+
+
