@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Hind">
+<body>
+<h1>Search for animals</h1>
+</body>
+</html>
+
 <?php //code for uploading files by W3schools.com
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

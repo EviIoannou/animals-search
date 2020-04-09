@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Hind">
+<body>
+<h1>Search for animals</h1>
+</body>
+</html>
+
 <?php
 require 'connection.php';
 
