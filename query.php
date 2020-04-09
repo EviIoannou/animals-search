@@ -32,16 +32,20 @@ function getResults($query){
 $animalOption = $_POST['animalName'];
 $animalText = $_POST['name'];
 if (isset($animalOption)){
-     if ($animalOption!= '0' && empty($animalText)) {
+    if (preg_match('/[0-9]/', $animalText )){
+        echo "Animal name cannot include numbers.";
+        }
+    else if ($animalOption!= '0' && empty($animalText)) {
         $query = "select * from animals where name like '%". $animalOption. "%'";
         getResults($query);   
         }
-
     else if ($animalOption=== '0' && !empty($animalText)) {
         $query = "select * from animals where name like '%". $animalText. "%'";
         getResults($query);
         }
-
+    else {
+        echo "<p> Please select an animal from the list OR search for an animal name.</p>";
+        }
 }
    
 
