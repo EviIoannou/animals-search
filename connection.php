@@ -3,7 +3,7 @@
 try {
     $db = new PDO ("mysql:host=localhost; dbname=zoo", "Evi", "evi3101");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Successful connection! <br>";
+    //echo "Successful connection! <br>";
 }
 //show error message if not able to connect
 catch (PDOException $e){
