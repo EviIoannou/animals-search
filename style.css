@@ -23,5 +23,23 @@ body {
     height: fit-content;
     width: fit-content;
     margin: 1em;
+    padding: 0.5em;
     font-family: 'Hind', sans-serif ;
+    color: white;
+    background-color: rgb(31, 108, 223);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+tr:first-child {font-weight: bolder;}
+th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+#query{
+    font-size: 0.8em;
+    font-style: italic;
 }

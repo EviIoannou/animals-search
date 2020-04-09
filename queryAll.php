@@ -13,7 +13,7 @@ require 'connection.php';
 
 //if database is open; an example query
 $query = "select * from animals";
-echo "Running the query: ". $query . "<br>"; 
+echo '<p id="query"> Running the query: '. $query . '</p>'; 
 try {
     $sth = $db -> query($query);
     $animalcount = $sth->rowCount();
@@ -22,7 +22,7 @@ try {
     exit;
     }
     else {
-        echo '<table bgcolor"#bdc0ff" cellpadding="6"' ;
+        echo '<table>' ;
         echo '<tr> <b> <td>Name</td> <td>Category</td> <td>Birthday</td> </b> </tr>';
         while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
             printf("<tr><td> %s</td> <td>%s </td> <td>%s </td> </tr>", 
