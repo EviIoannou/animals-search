@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Hind">
+<body>
+</body>
+</html>
 <?php
 require 'connection.php';
 
