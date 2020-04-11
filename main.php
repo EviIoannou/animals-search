@@ -5,7 +5,7 @@
   href="https://fonts.googleapis.com/css?family=Hind">
 <body>
 
-<h1>Search for animals</h1>
+<h1>Animals database</h1>
 <!-- require that connection to database works -->
 <?php require "connection.php"; ?> 
 

@@ -7,6 +7,6 @@ try {
 }
 //show error message if not able to connect
 catch (PDOException $e){
-    echo "There is an error: \n", $e->getMessage() ;
+    echo "<p class='error'> There is an error: \n", $e->getMessage(). "</p>";
     exit;
 } 

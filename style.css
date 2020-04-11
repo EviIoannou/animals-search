@@ -43,3 +43,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     font-size: 0.8em;
     font-style: italic;
 }
+
+.error {
+    color: rgb(163, 5, 5);
+}

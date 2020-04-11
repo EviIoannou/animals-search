@@ -4,7 +4,7 @@
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Hind">
 <body>
-<h1>Search for animals</h1>
+<h1>Animals database</h1>
 </body>
 </html>
 
@@ -33,7 +33,7 @@ $animalOption = $_POST['animalName'];
 $animalText = $_POST['name'];
 if (isset($animalOption)){
     if (preg_match('/[0-9]/', $animalText )){
-        echo "Animal name cannot include numbers.";
+        echo "<p class='error> 'Animal name cannot include numbers. </p>";
         }
     else if ($animalOption!= '0' && empty($animalText)) {
         $query = "select * from animals where name like '%". $animalOption. "%'";
@@ -44,7 +44,7 @@ if (isset($animalOption)){
         getResults($query);
         }
     else {
-        echo "<p> Please select an animal from the list OR search for an animal name.</p>";
+        echo "<p class='error'> Please select an animal from the list OR search for an animal name.</p>";
         }
 }
    
