@@ -33,7 +33,7 @@ $animalOption = $_POST['animalName'];
 $animalText = $_POST['name'];
 if (isset($animalOption)){
     if (preg_match('/[0-9]/', $animalText )){
-        echo "<p class='error> 'Animal name cannot include numbers. </p>";
+        echo "<p class='error'> Animal name cannot include numbers. </p>";
         }
     else if ($animalOption!= '0' && empty($animalText)) {
         $query = "select * from animals where name like '%". $animalOption. "%'";
