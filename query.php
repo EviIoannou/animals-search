@@ -35,11 +35,11 @@ if (isset($animalOption)){
     if (preg_match('/[0-9]/', $animalText )){
         echo "<p class='error'> Animal name cannot include numbers. </p>";
         }
-    else if ($animalOption!= '0' && empty($animalText)) {
+    else if ($animalOption!= 'none' && empty($animalText)) {
         $query = "select * from animals where name like '%". $animalOption. "%'";
         getResults($query);   
         }
-    else if ($animalOption=== '0' && !empty($animalText)) {
+    else if ($animalOption=== 'none' && !empty($animalText)) {
         $query = "select * from animals where name like '%". $animalText. "%'";
         getResults($query);
         }

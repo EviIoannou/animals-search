@@ -36,7 +36,7 @@
     <?php include 'select.php'; ?>
     Select an animal:
     <select name='animalName'>
-        <option value = '0' >Select</option>
+        <option value = 'none' >Select</option>
         <?php foreach($animals as $animal){
         echo  "<option value= ". $animal['name']. " >". $animal['name']. "</option>";
         }
