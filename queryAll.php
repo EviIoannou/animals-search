@@ -23,9 +23,9 @@ try {
     }
     else {
         echo '<table>' ;
-        echo '<tr> <b> <td>Name</td> <td>Category</td> <td>Birthday</td> </b> </tr>';
+        echo '<tr> <td>Name</td> <td>Category</td> <td>Birthday</td> </tr>';
         while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-            echo("<tr><td> %s</td> <td>%s </td> <td>%s </td> </tr>", 
+            printf("<tr><td> %s</td> <td>%s </td> <td>%s </td> </tr>", 
             $row["name"], $row["category"], $row["birthday"]);
         }
     }
