@@ -4,6 +4,7 @@
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Hind">
 <body>
+<a href="index.php"><input type="button" value="Back" class="back"></a>
 <h1>Animals database</h1>
 </body>
 </html>
