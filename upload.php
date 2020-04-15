@@ -4,11 +4,9 @@
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Hind">
 <body>
-<a href="index.php"><input type="button" value="Back" class="back"></a>
-<h1>Animals database</h1>
-</body>
-</html>
 
+<h1>Animals database</h1>
+<a href="index.php"><input type="button" value="Back" class="back"></a> 
 <?php //code for uploading files by W3schools.com
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -56,3 +54,15 @@ if ($uploadOk == 0) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded. <br>";
     } 
 }
+
+?>
+
+  
+</body>
+</html>
+
+
+
+
+  
+ 

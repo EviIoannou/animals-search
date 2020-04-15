@@ -4,15 +4,12 @@
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Hind">
 <body>
-<a href="index.php"><input type="button" value="Back" class="back"></a>
 <h1>Animals database</h1>
-</body>
-</html>
-
+<a href="index.php"><input type="button" value="Back" class="back"></a>
 <?php
 require 'connection.php';
 
-//if database is open; an example query
+//if database is open show all data
 $query = "select * from animals";
 echo '<p id="query"> Running the query: '. $query . '</p>'; 
 try {
@@ -34,3 +31,9 @@ try {
 catch (PDOException $e){
     echo "There is an error: \n", $e->getMessage() ;
 }
+
+?>
+</body>
+</html>
+
+

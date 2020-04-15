@@ -4,11 +4,9 @@
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Hind">
 <body>
-<a href="index.php"><input type="button" value="Back" class="back"></a>
-<h1>Animals database</h1>
-</body>
-</html>
 
+<h1>Animals database</h1>
+<a href="index.php"><input type="button" value="Back" class="back"></a>
 <?php
 
 function getResults($query){
@@ -48,6 +46,12 @@ if (isset($animalOption)){
         echo "<p class='error'> Please select an animal from the list OR search for an animal name.</p>";
         }
 }
+
+?>
+</body>
+</html>
+
+
    
 
 
