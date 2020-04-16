@@ -6,7 +6,7 @@
 <body>
 
 <h1>Animals database</h1>
-<a href="index.php"><input type="button" value="Back" class="back"></a>
+
 <?php
 
 function getResults($query){
@@ -16,7 +16,6 @@ function getResults($query){
     $animalcount = $sth->rowCount();
     if ($animalcount==0){ //check if there is data
         echo "Sorry, there is no data about this animal.";
-    exit;
     }
     else {
         echo '<table>' ;
@@ -26,6 +25,7 @@ function getResults($query){
             $row["name"], $row["category"], $row["birthday"]);
         }
     }
+    
 }
 
 $animalOption = $_POST['animalName'];
@@ -36,7 +36,7 @@ if (isset($animalOption)){
         }
     else if ($animalOption!= 'none' && empty($animalText)) {
         $query = "select * from animals where name like '%". $animalOption. "%'";
-        getResults($query);   
+        getResults($query);
         }
     else if ($animalOption=== 'none' && !empty($animalText)) {
         $query = "select * from animals where name like '%". $animalText. "%'";
@@ -44,10 +44,12 @@ if (isset($animalOption)){
         }
     else {
         echo "<p class='error'> Please select an animal from the list OR search for an animal name.</p>";
-        }
+    }
 }
 
 ?>
+
+<a href="index.php"><input type="button" value="Back" class="back"></a> 
 </body>
 </html>
 

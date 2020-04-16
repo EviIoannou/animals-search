@@ -5,7 +5,7 @@
   href="https://fonts.googleapis.com/css?family=Hind">
 <body>
 <h1>Animals database</h1>
-<a href="index.php"><input type="button" value="Back" class="back"></a>
+
 <?php
 require 'connection.php';
 
@@ -17,7 +17,6 @@ try {
     $animalcount = $sth->rowCount();
     if ($animalcount==0){ //check if there is data
         echo "Sorry, there is no data about these animals.";
-    exit;
     }
     else {
         echo '<table>' ;
@@ -31,8 +30,9 @@ try {
 catch (PDOException $e){
     echo "There is an error: \n", $e->getMessage() ;
 }
-
 ?>
+
+<a href="index.php"><input type="button" value="Back" class="back"></a>
 </body>
 </html>
 
